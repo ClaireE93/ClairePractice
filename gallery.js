@@ -1,10 +1,11 @@
-
+let isPopupOpen = false; // True when the imgPopup is open
 
 function populateGallery() {
     let container = document.getElementById('img-gallery-container');
     let str = '';
     for(let i = 0; i < imgArr.length; i++) {
-        str += '<img id="' + i.toString() + '"" class="photo" onClick="imgPopup(' + i + ')" src="' + imgArr[i].src + '" />';
+      str += `<img id="${i}" class="photo" src="${imgArr[i].src}"/>`;
+        // str += '<img id="' + i.toString() + '"" class="photo" src="' + imgArr[i].src + '" />';
         // let img = document.createElement('img');
         // img.src = imgArr[i].src;
         // img.id = i.toString();
@@ -15,8 +16,7 @@ function populateGallery() {
     container.innerHTML = str;
 }
 
-let isImageClick = false;
-let isOpen = false;
+// let isImageClick = false;
 
 function imgPopup(ind) {
     // document.getElementById('overlay').style.visibility = 'visible';
@@ -43,24 +43,25 @@ function imgPopup(ind) {
     let description = document.createTextNode(imgArr[ind].desc);
     popupTxt.appendChild(description);
     // window.addEventListener('click', closePopup(), false);
-    isImageClick = true;
-    isOpen = true;
+    // isImageClick = true;
+    isPopupOpen = true;
 }
 
 document.addEventListener('click', function(event) {
-  if (isImageClick) {
-    isImageClick = false;
-    return;
-  }
-
-  const specifiedElement = document.getElementById('img-popup-container');
-  if (!specifiedElement) return;
-  const isClickInside = specifiedElement.contains(event.target);
-    // console.log('is open', isOpen, isClickInside);
-  if (!isClickInside && isOpen) {
-    isOpen = false;
-    document.getElementById('overlay').style.display = 'none';
+  const eventTarget = event.target;
+  // Note: Can extend this to check many class name or id's in a switch
+  if (eventTarget.className === 'photo') {
+    imgPopup(event.target.id);
+  } else {
+    const specifiedElement = document.getElementById('img-popup-container');
+    if (!specifiedElement) return;
+    const isClickInside = specifiedElement.contains(eventTarget);
+    if (!isClickInside && isPopupOpen) {
+      isPopupOpen = false;
+      document.getElementById('overlay').style.display = 'none';
+    }
   }
 });
 
+// TODO: move to external file
 let imgArr = [{src: "GalleryPhotos/20170115_103925.jpg", desc: "Donner Lake, Truckee, CA"}, {src: "GalleryPhotos/cottowood.jpg", desc: "White Sands National Park, NM" }, {src: "GalleryPhotos/DSC07725.jpg", desc: "White Sands National Park, NM"}, {src: "GalleryPhotos/DSC07899.jpg", desc: "Vancouver, Canada" }, {src: "GalleryPhotos/DSC07947.jpg", desc: "Vancouver, Canada"}, {src: "GalleryPhotos/DSC07949.jpg", desc: "Vancouver, Canada"}, {src: "GalleryPhotos/DSC08027.jpg", desc: "Squamish, Canada"}, {src: "GalleryPhotos/HalfDome.jpg", desc: "Yosemite, CA"}, {src: "GalleryPhotos/HiddenLake.jpg", desc: "Glacier National Park, MT"}, {src: "GalleryPhotos/Hieropolis.jpg", desc: "Hieropolis, Turkey"}, {src: "GalleryPhotos/HalfDome2.jpg", desc: "Yosemite, CA"}, {src: "GalleryPhotos/Waterfall.jpg", desc: "Crater Lake, OR"}];
