@@ -69,25 +69,9 @@ body{
 }
 
 .img-popup-container{
-  /*visibility: hidden;*/
   z-index: 11;
-  /*width: 300px;
-  height: 200px;
-  line-height: 200px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -150px;
-  background-color: #37393d;
-  border-radius: 5px;
-  text-align: center;*/
   background-color: #37393d;
   position: fixed;
-  /*top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -150px;*/
   display: flex;
   justify-content: space-between;
   flex-direction: column;
