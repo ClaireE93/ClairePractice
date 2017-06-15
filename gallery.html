@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="gallery.css">
     <script src="gallery.js"></script>
+    <script src="photoObj.js" type="text/javascript"></script>
   </head>
   <body class="homepage" onload="populateGallery()">
     <div class="topbanner-container">
@@ -17,7 +18,10 @@
     </div>
     <div class="overlay" id="overlay">
         <div class="img-popup-container" id="img-popup-container">
-            <div class="img-popup-element" id="img-popup-element"></div>
+            <div class="img-popup-element" id="img-popup-element">
+                <img class="img-popup" id="img-popup"/>
+                <!-- <img class="arrows" id="arrows"/> -->
+            </div>
             <!-- LOOK AT: adding "null" image that the source will change onClick -->
             <div class="text-popup-element" id="text-popup-element"></div>
         </div>

@@ -83,9 +83,13 @@ body{
   /*opacity: 1;*/
 }
 
-.image-popup-element{
+/*.image-popup-element{
   z-index: 12;
+}*/
 
+.img-popup{
+  height: auto;
+  width: auto;
 }
 
 .text-popup-element{

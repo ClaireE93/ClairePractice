@@ -1,0 +1,12 @@
+let imgArr = [{src: "GalleryPhotos/20170115_103925.jpg", desc: "Donner Lake, Truckee, CA"}, 
+{src: "GalleryPhotos/cottowood.jpg", desc: "White Sands National Park, NM" },
+ {src: "GalleryPhotos/DSC07725.jpg", desc: "White Sands National Park, NM"}, 
+ {src: "GalleryPhotos/DSC07899.jpg", desc: "Vancouver, Canada" }, 
+ {src: "GalleryPhotos/DSC07947.jpg", desc: "Vancouver, Canada"}, 
+ {src: "GalleryPhotos/DSC07949.jpg", desc: "Vancouver, Canada"}, 
+ {src: "GalleryPhotos/DSC08027.jpg", desc: "Squamish, Canada"}, 
+ {src: "GalleryPhotos/HalfDome.jpg", desc: "Yosemite, CA"}, 
+ {src: "GalleryPhotos/HiddenLake.jpg", desc: "Glacier National Park, MT"}, 
+ {src: "GalleryPhotos/Hieropolis.jpg", desc: "Hieropolis, Turkey"}, 
+ {src: "GalleryPhotos/HalfDome2.jpg", desc: "Yosemite, CA"}, 
+ {src: "GalleryPhotos/Waterfall.jpg", desc: "Crater Lake, OR"}];
