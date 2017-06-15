@@ -70,6 +70,8 @@ body{
 
 .img-popup-container{
   z-index: 11;
+  /*width: auto;*/
+  /*height: auto;*/
   background-color: #37393d;
   position: fixed;
   display: flex;
@@ -77,24 +79,35 @@ body{
   flex-direction: column;
   align-content: flex-start;
   align-items: center;
-
-  /*transition: opacity 0.5s ease-in;*/
-  /*-webkit-transition: opacity 0.5s ease-in;*/
-  /*opacity: 1;*/
 }
 
-/*.image-popup-element{
-  z-index: 12;
-}*/
-
 .img-popup{
-  height: auto;
-  width: auto;
+  /*width: inherit;*/
+  /*height: inherit;*/
+  /*width: auto;
+  height: auto;*/
+}
+
+.img-popup-element{
+  z-index: 13;
+  /*position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;*/
+  /*height: auto;*/
 }
 
 .text-popup-element{
-  z-index: 12;
+  /*z-index: 12;*/
   font-size: 30px;
   font-family: 'Amatic SC', cursive;
   color: white;
 }
+
+/*.arrows{
+  width: 30px;
+  height: 30px;
+}*/
+
+
