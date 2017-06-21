@@ -7,15 +7,15 @@ function changeImage(location) {
   return false;
 }
 
-function fadeIn(el){
-  el.style.opacity = 0;
-  el.style.display = 'flex';
+// function fadeIn(el){
+//   el.style.opacity = 0;
+//   el.style.display = 'flex';
 
-  (function fade() {
-    var val = parseFloat(el.style.opacity);
-    if (!((val += 0.05) > 1)) {
-      el.style.opacity = val;
-      requestAnimationFrame(fade);
-    }
-  })();
-}
+//   (function fade() {
+//     var val = parseFloat(el.style.opacity);
+//     if (!((val += 0.05) > 1)) {
+//       el.style.opacity = val;
+//       requestAnimationFrame(fade);
+//     }
+//   })();
+// }
