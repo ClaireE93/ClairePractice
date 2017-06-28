@@ -7,7 +7,7 @@
     <script src="map.js"></script>
     <script src="utility.js"></script>
   </head>
-  <body class="homepage">
+  <body class="homepage" id="homepage">
     <div class="topbanner-container">
         <div class="topbanner"><a href="map.html"><img src="logo.png" width="30%"/></a></div>
     </div>
@@ -16,15 +16,63 @@
         <div class="nav-item"><a href="gallery.html">Photos</a></div>
         <div class="nav-item"><a href="calendar.html">Calendar</a></div>
     </div>
-
+    <div class="markerButton">
+        <button id="marker">Add a marker</button>
+    </div>
     <div class="map-container">
-        <button id="NorthAmerica" onclick="changeImage('NorthAmerica');">North America</button>
-        <button id="SouthAmerica" onclick="changeImage('SouthAmerica');">South America</button>
-        <button id="Europe" onclick="changeImage('Europe');">Europe</button>
-        <button id="Africa" onclick="changeImage('Africa');">Africa</button>
-        <button id="Asia" onclick="changeImage('Asia');">Asia</button>
-        <button id="Oceania" onclick="changeImage('Oceania');">Oceania</button>
+        <button class="mapButton" id="NorthAmerica">North America</button>
+        <button class="mapButton" id="SouthAmerica">South America</button>
+        <button class="mapButton" id="Europe">Europe</button>
+        <button class="mapButton" id="Africa">Africa</button>
+        <button class="mapButton" id="Asia">Asia</button>
+        <button class="mapButton" id="Oceania">Oceania</button>
     </div>
     <img class="mainmap" id="map-image" src="MapPhotos/maplarge.jpg"/>
+    <div class="markerForm">
+        <form action="/markers" method="POST" class="form" id="form">
+            <div>
+                <label for="continent">Continent:</label>
+                <input type="text" id="continent" name="continent">
+            </div>
+            <div>
+                <label for="place">Place:</label>
+                <input type="text" id="place" placeholder="Where?" name="place">
+            </div>
+            <div>
+                <label for="status">
+                    <span>Status:</span>
+                </label>
+                <select id="status" name="statis">
+                    <option selected value="visited">
+                        Visited
+                    </option>
+                    <option value="toVisit">
+                        Want to visit
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label for="notes">Notes:</label>
+                <input type="text" id="notes" placeholder="Notes" name="notes">
+            </div>
+            <div>
+                <label for="place">Place:</label>
+                <input type="text" id="place" placeholder="Where?" name="place">
+            </div>
+            <div>
+                <label for="xRatio">X:</label>
+                <input type="number" id="xRatio" name="xRatio">
+            </div>
+            <div>
+                <label for="yRatio">Y:</label>
+                <input type="number" id="yRatio" name="yRatio">
+            </div>
+            <button id="form-button" type="submit">Done</button>
+            <button id="cancel-button" type="cancel">Cancel</button>
+    </div>
+    <div id="marker-images">
+    </div>
+
+</form>
   </body>
 </html>

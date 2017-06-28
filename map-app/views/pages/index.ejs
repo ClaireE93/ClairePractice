@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Practice Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- <script src="main.js"></script>
+    <script src="../../utility.js"></script> -->
+  </head>
+  <body class="homepage" id="homepage">
+    <!-- <div class="topbanner-container">
+        <div class="topbanner"><a href="index.ejs"><img src="../../logo.png" width="30%"/></a></div>
+    </div>
+    <div class="nav-container">
+        <div class="nav-item"><a href="index.ejs">Home</a></div>
+        <div class="nav-item"><a href="gallery.html">Photos</a></div>
+        <div class="nav-item"><a href="calendar.html">Calendar</a></div>
+    </div> -->
+    <% include ../partials/header %>
+    <div class="markerButton">
+        <button id="marker">Add a marker</button>
+    </div>
+    <div class="map-container">
+        <button class="mapButton" id="NorthAmerica">North America</button>
+        <button class="mapButton" id="SouthAmerica">South America</button>
+        <button class="mapButton" id="Europe">Europe</button>
+        <button class="mapButton" id="Africa">Africa</button>
+        <button class="mapButton" id="Asia">Asia</button>
+        <button class="mapButton" id="Oceania">Oceania</button>
+    </div>
+    <img class="mainmap" id="map-image" src="MapPhotos/maplarge.jpg"/>
+    <div class="markerForm">
+        <form action="/markers" method="POST" class="form" id="form">
+        <!-- <form method="POST" class="form" id="form"> -->
+            <div>
+                <label for="continent">Continent:</label>
+                <input type="text" id="continent" name="continent">
+            </div>
+            <div>
+                <label for="place">Place:</label>
+                <input type="text" id="place" placeholder="Where?" name="place">
+            </div>
+            <div>
+                <label for="status">
+                    <span>Status:</span>
+                </label>
+                <select id="status" name="statis">
+                    <option selected value="visited">
+                        Visited
+                    </option>
+                    <option value="toVisit">
+                        Want to visit
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label for="notes">Notes:</label>
+                <input type="text" id="notes" placeholder="Notes" name="notes">
+            </div>
+            <div>
+                <label for="xRatio">X:</label>
+                <input type="number" id="xRatio" name="xRatio">
+            </div>
+            <div>
+                <label for="yRatio">Y:</label>
+                <input type="number" id="yRatio" name="yRatio">
+            </div>
+            <button id="form-button" type="submit" formaction="/done">Done</button>
+            <button id="cancel-button" type="submit" formaction="/cancel">Cancel</button>
+            </div>
+            <div id="marker-images"></div>
+        </form>
+        <% for(var i=0; i<markers.length; i++) { %>
+            <div class="marker-results">
+                <span>Continent: <%= markers[i].continent %></span>
+                <span>Place: <%= markers[i].place %></span>
+                <span>Notes: <%= markers[i].notes %></span>
+            </div>
+        <% } %>
+
+    <script src="main.js"></script>
+    <script src="utility.js"></script>
+  </body>
+</html>

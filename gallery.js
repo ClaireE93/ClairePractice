@@ -127,7 +127,7 @@ function shiftLeft() {
         }
 }
 
-//TODO Put into "utility" file and import onto both pages
+// TODO Put into "utility" file and import onto both pages
 // function fadeIn(el){
 //   el.style.opacity = 0;
 //   el.style.display = 'flex';
